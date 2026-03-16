@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    --text: #6b6375;
+    --text-h: #08060d;
+    --bg: #fff;
+    --panel: rgb(255 255 255 / 0.82);
+    --border: #e5e4e7;
+    --code-bg: #f4f3ec;
+    --accent: #aa3bff;
+    --accent-bg: rgb(170 59 255 / 0.1);
+    --accent-border: rgb(170 59 255 / 0.5);
+    color-scheme: light dark;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --text: #9ca3af;
+      --text-h: #f3f4f6;
+      --bg: #16171d;
+      --panel: rgb(31 32 40 / 0.82);
+      --border: #2e303a;
+      --code-bg: #1f2028;
+      --accent: #c084fc;
+      --accent-bg: rgb(192 132 252 / 0.15);
+      --accent-border: rgb(192 132 252 / 0.5);
+    }
+  }
+
+  body {
+    @apply m-0 bg-[radial-gradient(circle_at_top,_rgb(170_59_255_/_0.10),_transparent_32%),linear-gradient(180deg,_var(--bg)_0%,_color-mix(in_srgb,var(--bg)_92%,black_8%)_100%)] font-sans text-[16px] leading-[1.45] tracking-[0.18px] text-[color:var(--text)] lg:text-[18px];
+  }
+
+  p {
+    @apply m-0;
+  }
+}
